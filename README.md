@@ -55,7 +55,7 @@ To deploy to GitHub Pages:
    - Set the folder to `/docs`
    - Click Save
 
-4. Your site will be available at: `https://bobbigmac.github.io/is-india-working/`
+4. Your site will be available at: [https://bobbigmac.github.io/is-india-working/](https://bobbigmac.github.io/is-india-working/)
 
 Note: The `.nojekyll` file in the `docs` directory ensures that GitHub Pages doesn't process your files with Jekyll, which is important for properly serving the Parcel build.
 
