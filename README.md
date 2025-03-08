@@ -39,10 +39,11 @@ To deploy to GitHub Pages:
    ```
    yarn build
    ```
+   This will generate the site in the `docs` directory.
 
-2. Commit and push the `dist` directory to your GitHub repository:
+2. Commit and push the `docs` directory to your GitHub repository:
    ```
-   git add dist -f
+   git add docs
    git commit -m "Update build for GitHub Pages"
    git push
    ```
@@ -51,10 +52,10 @@ To deploy to GitHub Pages:
    - Go to Settings > Pages
    - Set "Source" to "Deploy from a branch"
    - Select your main branch
-   - Set the folder to `/dist`
+   - Set the folder to `/docs`
    - Click Save
 
 4. Your site will be available at: `https://bobbigmac.github.io/is-india-working/`
 
-Note: The `.nojekyll` file in both root and `dist` directories ensures that GitHub Pages doesn't process your files with Jekyll, which is important for properly serving the Parcel build.
+Note: The `.nojekyll` file in the `docs` directory ensures that GitHub Pages doesn't process your files with Jekyll, which is important for properly serving the Parcel build.
 
