@@ -1,17 +1,60 @@
 # Is India Working Right Now?
 
-This tool just reports if it's currently indian working hours for most workplaces, right now.
-
-It works on client-side only, hosted on github pages.
-
-Its main use is for people in timezones other than india, so they don't need to do the maths in their head, especially because india is like .35hrs off gmt or bst or something, I can never remember which.
-
-It doesn't need any API use, it's client-side only, and should be able to ask the browser for the user's timezone offset, including daylight saving.
+A simple web tool that shows whether it's currently working hours in India. Useful for anyone working with Indian colleagues or services across different time zones.
 
 ## Purpose
 
-Most of the big generative AI companies get heavy usage when India is awake, so anyone else gets really shitty slow service, and poor quality text generation because the servers are overloaded and the AI companies distribute load by just tuning the parameters to use fewer cycles per token (increasing repetition, reducing comprehension, etc).
+Many AI companies experience peak usage during Indian working hours, leading to:
+- Slower response times
+- Reduced quality of text generation
+- Higher error rates
 
-The main page shows the current time in the user's browser, the current time in india, and a message in red showing if indian office workers are currently working, and green if they're not working.
+This tool helps you plan your AI usage around these peak times by showing:
+- Your local time
+- Current time in India (IST)
+- Whether Indian offices are currently working
+- Time until the next status change (start/end of work day)
 
-It also shows how many hours left and the expected local time, until either Indian workers stop working, or start working again, based on the current status.
+## Features
+
+- Shows current time in your local timezone and IST
+- Displays working status in real-time
+- Accounts for Indian public holidays
+- Calculates time until next status change
+- Works entirely client-side - no data is shared
+
+## Technical Details
+
+- Working hours: 9:00 AM to 6:00 PM IST, Monday to Friday
+- Handles timezone conversion including DST
+- India is UTC+5:30
+- Runs entirely in the browser
+- Hosted on GitHub Pages
+
+## Deployment
+
+To deploy to GitHub Pages:
+
+1. Build the project locally:
+   ```
+   yarn build
+   ```
+
+2. Commit and push the `dist` directory to your GitHub repository:
+   ```
+   git add dist -f
+   git commit -m "Update build for GitHub Pages"
+   git push
+   ```
+
+3. Configure GitHub Pages in your repository settings:
+   - Go to Settings > Pages
+   - Set "Source" to "Deploy from a branch"
+   - Select your main branch
+   - Set the folder to `/dist`
+   - Click Save
+
+4. Your site will be available at: `https://bobbigmac.github.io/is-india-working/`
+
+Note: The `.nojekyll` file in both root and `dist` directories ensures that GitHub Pages doesn't process your files with Jekyll, which is important for properly serving the Parcel build.
+
