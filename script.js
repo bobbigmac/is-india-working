@@ -1,8 +1,26 @@
+import { renderLLMLoadGraph } from './load-graph.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Update times every second
     updateTimes();
     setInterval(updateTimes, 1000);
+    
+    // Initialize the LLM load graph
+    initializeLLMLoadGraph();
 });
+
+function initializeLLMLoadGraph() {
+    const canvas = document.getElementById('llm-load-graph');
+    if (canvas) {
+        // Initialize graph
+        renderLLMLoadGraph(canvas);
+        
+        // Update graph every 5 minutes to reflect changing time
+        setInterval(() => {
+            renderLLMLoadGraph(canvas);
+        }, 5 * 60 * 1000);
+    }
+}
 
 function updateTimes() {
     // Get current local time
