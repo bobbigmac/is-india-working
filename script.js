@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateTimes, 1000);
     
     // Initialize the LLM load graph
-    initializeLLMLoadGraph();
+    // Timezones aren't quite right
+    // initializeLLMLoadGraph();
 });
 
 function initializeLLMLoadGraph() {
